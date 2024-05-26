@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import 'animate.css';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -102,6 +103,7 @@ const Login = () => {
                                 <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
+                        <SocialLogin></SocialLogin>
                         <p className='text-center mb-6'><small>New Here? <Link to="/signup" className='text-orange-500 underline'>Create an Account</Link></small></p>
                     </div>
                 </div>
