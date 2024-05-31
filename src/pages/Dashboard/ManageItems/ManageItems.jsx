@@ -3,11 +3,12 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useMenu from "../../../hooks/useMenu";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const ManageItems = () => {
 
-    const [menu] = useMenu();
+    const [menu, , refetch] = useMenu();
     const axiosSecure = useAxiosSecure();
 
     const handleDeleteItem = (item) => {
@@ -25,7 +26,7 @@ const ManageItems = () => {
                 console.log(res.data);
                 if (res.data.deletedCount > 0) {
                     // refetch to update the ui
-                    // refetch();
+                    refetch();
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
@@ -71,14 +72,16 @@ const ManageItems = () => {
                                     <td>{item.name}</td>
                                     <td>${item.price}</td>
                                     <td>
-                                    <button className="btn btn-warning btn-md"><FaEdit /></button>
+                                        <Link to={`/dashboard/updateItem/${item._id}`}>
+                                            <button className="btn btn-warning btn-md"><FaEdit /></button>
+                                        </Link>
                                     </td>
                                     <td>
-                                    <button onClick={() => handleDeleteItem(item)}  className="btn btn-error btn-md"><FaTrashAlt /></button>
+                                        <button onClick={() => handleDeleteItem(item)} className="btn btn-error btn-md"><FaTrashAlt /></button>
                                     </td>
                                 </tr>)
                             }
-                            
+
                         </tbody>
                     </table>
                 </div>
