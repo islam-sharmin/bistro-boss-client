@@ -31,7 +31,7 @@ const Dashboard = () => {
                                 <li><NavLink to="/dashboard/reservation"><FaCalendarAlt /> Reservation</NavLink></li>
                                 <li><NavLink to="/dashboard/cart"><FaShoppingCart /> My Cart ({cart.length})</NavLink></li>
                                 <li><NavLink to="/dashboard/review"><MdReviews /> Add Review</NavLink></li>
-                                <li><NavLink to="/dashboard/bookings"><MdLaptopChromebook /> My Bookings</NavLink></li>
+                                <li><NavLink to="/dashboard/paymentHistory"><MdLaptopChromebook /> Payment History</NavLink></li>
                             </>
                     }
 
