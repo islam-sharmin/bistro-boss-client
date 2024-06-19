@@ -19,7 +19,7 @@ const Login = () => {
     console.log('state in the location login', location.state);
 
     useEffect(() => {
-        loadCaptchaEnginge(6);
+        loadCaptchaEnginge(4);
     }, [])
 
     const handleLogin = event => {
