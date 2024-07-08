@@ -54,6 +54,7 @@ const Login = () => {
             })
             .catch(error => console.error(error))
     }
+    
 
     const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
